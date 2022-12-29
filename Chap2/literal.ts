@@ -1,4 +1,5 @@
 let literal: "tom" | "linda" | "jeff" | "sue" = "linda";
 literal = "sue";
-//literal = "john";
+literal = "john";
+
 console.log(literal);

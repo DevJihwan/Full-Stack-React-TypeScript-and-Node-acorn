@@ -1,5 +1,3 @@
-let unionObj: null | { name: string } = null;
-
+var unionObj = null;
 unionObj = { name: "jon" };
-
 console.log(unionObj);
