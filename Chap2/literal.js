@@ -1,4 +1,4 @@
-var literal = "linda";
-literal = "sue";
-literal = "john";
-console.log(literal);
+// let literal: "tom" | "linda" | "jeff" | "sue" = "linda";
+// literal = "sue";
+var score = 99;
+console.log(score);

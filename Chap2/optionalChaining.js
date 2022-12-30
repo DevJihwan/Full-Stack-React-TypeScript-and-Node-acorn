@@ -1,6 +1,6 @@
 var OptionalChainingNS;
 (function (OptionalChainingNS) {
-    var _a, _b, _c;
+    var _a;
     var Automobile = /** @class */ (function () {
         function Automobile(wheels) {
             this.wheels = wheels;
@@ -10,7 +10,7 @@ var OptionalChainingNS;
     var car = new Automobile({
         count: undefined
     });
-    console.log("car ", car);
-    console.log("wheels ", (_a = car) === null || _a === void 0 ? void 0 : _a.wheels);
-    console.log("count ", (_c = (_b = car) === null || _b === void 0 ? void 0 : _b.wheels) === null || _c === void 0 ? void 0 : _c.count);
+    console.log("car", car);
+    console.log("wheels", car === null || car === void 0 ? void 0 : car.wheels);
+    console.log("count", (_a = car === null || car === void 0 ? void 0 : car.wheels) === null || _a === void 0 ? void 0 : _a.count);
 })(OptionalChainingNS || (OptionalChainingNS = {}));

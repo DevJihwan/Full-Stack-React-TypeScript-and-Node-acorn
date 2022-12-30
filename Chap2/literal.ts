@@ -1,5 +1,7 @@
-let literal: "tom" | "linda" | "jeff" | "sue" = "linda";
-literal = "sue";
-literal = "john";
+// let literal: "tom" | "linda" | "jeff" | "sue" = "linda";
+// literal = "sue";
 
-console.log(literal);
+type Points = 20 | 30 | 40 | 50;
+let score: Points = 99;
+
+console.log(score);
