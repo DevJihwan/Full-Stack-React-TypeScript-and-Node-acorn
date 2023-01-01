@@ -4,5 +4,5 @@ if (true) {
 function go() {
     var val2 = 2;
 }
-console.log(val1);
-//console.log(val2);
+console.log(var1);
+console.log(var2);

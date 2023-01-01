@@ -16,8 +16,8 @@ var B = /** @class */ (function () {
     };
     return B;
 }());
-var a = new A();
-a.go();
-var b = new B();
-b.go = b.go.bind(a);
-b.go();
+var aa = new A();
+aa.go();
+var bb = new B();
+bb.go = bb.go.bind(aa);
+bb.go();

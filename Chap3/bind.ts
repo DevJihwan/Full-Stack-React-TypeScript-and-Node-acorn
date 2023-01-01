@@ -1,19 +1,20 @@
 class A {
-    name: string = "A";
-    go() {
-        console.log(this.name);
-    }
+  name: string = "A";
+  go() {
+    console.log(this.name);
+  }
 }
 
 class B {
-    name: string = "B";
-    go() {
-        console.log(this.name);
-    }
+  name: string = "B";
+  go() {
+    console.log(this.name);
+  }
 }
 
-const a = new A();
-a.go();
-const b = new B();
-b.go = b.go.bind(a);
-b.go();
+const aa = new A();
+aa.go();
+
+const bb = new B();
+bb.go = bb.go.bind(aa);
+bb.go();
