@@ -1,14 +1,14 @@
 const myPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        //resolve("I completed successfully");
-        reject("I failed");
-    }, 500);
+  setTimeout(() => {
+    //resolve("I completed successfully");
+    reject("I failed");
+  }, 500);
 });
 
 myPromise
-.then(done => {
+  .then((done) => {
     console.log(done);
-})
-.catch(err => {
+  })
+  .catch((err) => {
     console.log(err);
-});
+  });
