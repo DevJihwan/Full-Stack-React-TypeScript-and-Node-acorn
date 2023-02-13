@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { AppState } from "./store/AppState";
 import { useSelector } from "react-redux";
+
 const UserDisplay = React.memo(() => {
   const renderCount = useRef(0);
   console.log("renders UserDisplay", renderCount.current++);
@@ -11,15 +12,15 @@ const UserDisplay = React.memo(() => {
     return (
       <React.Fragment>
         <div>
-          <label>username:</label>
+          <label>username :</label>
           &nbsp;{user.username}
         </div>
         <div>
-          <label>email:</label>
+          <label>email :</label>
           &nbsp;{user.email}
         </div>
         <div>
-          <label>city:</label>
+          <label>city :</label>
           &nbsp;{user.city}
         </div>
       </React.Fragment>
@@ -28,4 +29,5 @@ const UserDisplay = React.memo(() => {
     return null;
   }
 });
+
 export default UserDisplay;

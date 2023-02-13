@@ -10,6 +10,7 @@ function App() {
   const [userid, setUserid] = useState(0);
   const dispatch = useDispatch();
   const [postid, setPostId] = useState(0);
+
   const onChangeUserId = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const useridFromInput = e.target.value ? Number(e.target.value) : 0;
     console.log("userid", useridFromInput);
@@ -18,12 +19,15 @@ function App() {
     const usersResponse = await fetch(
       "https://jsonplaceholder.typicode.com/users"
     );
+
     if (usersResponse.ok) {
       const users = await usersResponse.json();
       console.log("users", users);
+
       const usr = users.find((userItem: any) => {
         return userItem && userItem.id === useridFromInput;
       });
+
       console.log("usr", usr);
       dispatch({
         type: USER_TYPE,
@@ -44,9 +48,11 @@ function App() {
     const postResponse = await fetch(
       "https://jsonplaceholder.typicode.com/posts/" + postIdFromInput
     );
+
     if (postResponse.ok) {
       const post = await postResponse.json();
       console.log("post", post);
+
       dispatch({
         type: POST_TYPE,
         payload: {

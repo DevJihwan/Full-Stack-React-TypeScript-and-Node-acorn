@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 
 interface ScreenCProps {
@@ -12,11 +12,6 @@ interface Params {
 }
 
 const ScreenC: FC<ScreenCProps> = (props) => {
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     props.history.push("/");
-  //   }, 3000);
-  // });
   const history = useHistory();
   const { userid } = useParams<Params>();
 
@@ -27,11 +22,11 @@ const ScreenC: FC<ScreenCProps> = (props) => {
 
   return (
     <div>
-      {/* <div>{"Your id is " + props.match.params.userid}</div> */}
-      <div>{"Your id is " + userid}</div>
+      {/* <div>{"Your id is" + props.match.params.userid}</div> */}
+      <div>{"your id os " + userid}</div>
       <div>{props.message}</div>
       <div>
-        <button onClick={onClickGoback}>Go back</button>
+        <button onClick={onClickGoback}>Go Back</button>
       </div>
     </div>
   );

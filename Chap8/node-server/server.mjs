@@ -15,15 +15,14 @@ const server = http.createServer((req, res) => {
     req.on("end", () => {
       const params = Buffer.concat(body);
       console.log("body", params.toString());
-      res.end(`You submitted these parameters:
-    ${params.toString()}`);
+      res.end(`You submitted these parameters : ${params.toString()}`);
     });
   } else {
     res.end("good bye");
   }
 });
 
-const port = 8000;
+const port = 8080;
 server.listen(port, () => {
   console.log(`The server started on port ${port}`);
 });

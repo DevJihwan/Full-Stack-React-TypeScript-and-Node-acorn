@@ -7,14 +7,14 @@ export interface User {
   city: string;
 }
 
-export interface UserAction {
+export interface UseraAction {
   type: string;
   payload: User | null;
 }
 
 export const UserReducer = (
   state: User | null = null,
-  action: UserAction
+  action: UseraAction
 ): User | null => {
   switch (action.type) {
     case USER_TYPE:
