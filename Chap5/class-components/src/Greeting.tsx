@@ -1,16 +1,12 @@
 import React from "react";
-
 interface GreetingProps {
   name?: string;
 }
+
 interface GreetingState {
   message: string;
 }
-
-export default class Greeting extends React.Component<
-  GreetingProps,
-  GreetingState
-> {
+export default class Greeting extends React.Component<GreetingProps> {
   constructor(props: GreetingProps) {
     super(props);
 
@@ -18,6 +14,7 @@ export default class Greeting extends React.Component<
       message: Greeting.getNewMessage(props.name),
     };
   }
+  state: GreetingState;
 
   static getDerivedStateFromProps(props: GreetingProps, state: GreetingState) {
     console.log(props, state);
@@ -28,11 +25,9 @@ export default class Greeting extends React.Component<
     }
     return state;
   }
-
   static getNewMessage(name: string = "") {
     return `Hello from, ${name}`;
   }
-
   render() {
     console.log("rendering Greeting");
     if (!this.props.name) {

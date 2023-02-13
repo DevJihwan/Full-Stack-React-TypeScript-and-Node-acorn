@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback, useState, useEffect } from "react";
+import React, { useReducer, useState, useCallback, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Greeting from "./GreetingFunctional";
@@ -12,10 +12,14 @@ const reducer = (state: any, action: any) => {
         return state;
       }
       return { ...state, enteredName: action.payload };
+
     case "message":
-      return { ...state, message: `Hello, ${action.payload}` };
+      return {
+        ...state,
+        message: `Hello, ${action.payload}`,
+      };
     default:
-      throw new Error("Invalid action type " + action.type);
+      throw new Error("Invalid action type + " + action.type);
   }
 };
 
@@ -29,25 +33,39 @@ function App() {
     reducer,
     initialState
   );
+
   const [startCount, setStartCount] = useState(0);
   const [count, setCount] = useState(0);
+
   const setCountCallback = useCallback(() => {
     const inc =
       count + 1 > startCount ? count + 1 : Number(count + 1) + startCount;
     setCount(inc);
   }, [count, startCount]);
-  const [listItems, setListItems] = useState<Array<ListItem>>();
+
+  const [listItems, setlistItems] = useState<Array<ListItem>>();
 
   useEffect(() => {
     const li = [];
     for (let i = 0; i < count; i++) {
-      li.push({ id: i });
+      li.push({ id: 1 });
     }
-    setListItems(li);
+    setlistItems(li);
   }, [count]);
 
   const onWelcomeBtnClick = () => {
     setCountCallback();
+  };
+
+  const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch({
+      type: "enteredName",
+      payload: e.target.value,
+    });
+    dispatch({
+      type: "message",
+      payload: e.target.value,
+    });
   };
 
   const onChangeStartCount = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,7 +85,7 @@ function App() {
         />
 
         <div style={{ marginTop: "10px" }}>
-          <label>Enter a number and we'll increment it</label>
+          <label>Enter a number ans we'll increment it</label>
           <br />
           <input
             value={startCount}
@@ -77,9 +95,8 @@ function App() {
           &nbsp;
           <label>{count}</label>
           <br />
-          <button onClick={onWelcomeBtnClick}>Increment count</button>
+          <button onClick={onWelcomeBtnClick}>Increment Count</button>
         </div>
-
         <div>
           <ListCreator listItems={listItems} />
         </div>

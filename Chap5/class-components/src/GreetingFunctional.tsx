@@ -1,7 +1,7 @@
 import React from "react";
 
 interface GreetingProps {
-  message: string;
+  message: String;
 }
 
 export default function Greeting(props: GreetingProps) {

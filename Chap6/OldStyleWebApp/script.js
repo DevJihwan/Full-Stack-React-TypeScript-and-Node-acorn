@@ -1,7 +1,8 @@
 const inputEl = document.querySelector("#userName");
 console.log("input", inputEl);
-const parEl = document.querySelector("#welcomeMsg");
+
+const parE1 = document.querySelector("#welcomeMsg");
 
 inputEl.addEventListener("change", (e) => {
-    parEl.innerHTML = "Welcome " + e.target.value;
+  parE1.innerHTML = "welcome" + e.target.value;
 });
