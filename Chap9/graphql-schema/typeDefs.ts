@@ -3,27 +3,19 @@ import { gql } from "apollo-server-express";
 const typeDefs = gql`
   type User {
     id: ID!
-    username: String!
-    email: String
+    username: string!
+    email: string
   }
 
   type Todo {
     id: ID!
-    title: String!
-    description: String
+    title: string!
+    description: string
   }
 
   type Query {
     getUser(id: ID): User
     getTodos: [Todo!]
-  }
-
-  type Mutation {
-    addTodo(title: String!, description: String): Todo
-  }
-
-  type Subscription {
-    newTodo: Todo!
   }
 `;
 
